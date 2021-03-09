@@ -31,5 +31,5 @@ Adding kubeflow sample models into Dkube
 
 ## Serving images
 1. Tensorflow: `ocdr/tensorflowserver:1.14`
-2. PyTorch: `ocdr/pytorchserver:1.6-gpu`
+2. PyTorch: `ocdr/pytorchserver:1.6`
 3. SKlearn: `ocdr/sklearnserver:0.23.2`
