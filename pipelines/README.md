@@ -1,8 +1,8 @@
 # Chapter-4 Pipelines 
 ## How to run Pipelines in DKube
-1. Download the notebook from https://github.com/pallavi-pannu-oc/kflow-examples/tree/main/pipelines
-2. Create a IDE in DKube, upload the above notebook in any folder.
-3. Add the below code where you are creating the client for the execution of pipelines.
+1. Add the code repo in DKube https://github.com/pallavi-pannu-oc/kflow-examples/tree/main/pipelines
+2. Create a IDE in DKube, select the code created in step 1.
+3. Replace the client code with the below code in your notebooks.
    ```
    import os
    existing_token = os.getenv("DKUBE_USER_ACCESS_TOKEN")
