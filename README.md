@@ -7,24 +7,28 @@
 ## How to run ControlStructures.ipynb
 
 3. Replace the entire content of cell 4 in ControlStructures.ipynb with the below client code.
+   
    ```
    import os
    existing_token = os.getenv("DKUBE_USER_ACCESS_TOKEN")
    client = kfp.Client(existing_token=existing_token)
    client.create_run_from_pipeline_func(conditional_pipeline, arguments={})
    ```
+   
 ## How to run Lightweight Pipeline.ipynb 
 
 4. Replace the line `client = kfp.Client()` in cell 4 of Lightweight Pipeline.ipynb with the below client code.
+   
    ```
    import os
    existing_token = os.getenv("DKUBE_USER_ACCESS_TOKEN")
    client = kfp.Client(existing_token=existing_token)
    ```
+   
 5. Run all the cells in the notebook.
 6. It will automatically create a pipeline run in DKube, can be viewed from Experiments section by clicking on Pipelines in DKube.
 
-## Chapter-8 Model Inference
+# Chapter-8 Model Inference
 
 Adding kubeflow sample models into Dkube
 
