@@ -28,6 +28,34 @@
 5. Run all the cells in the notebook.
 6. It will automatically create a pipeline run in DKube, can be viewed from Experiments section by clicking on Pipelines in DKube.
 
+## Chapter- Data Preparation
+
+1. Add the code repo in DKube https://github.com/intro-to-ml-with-kubeflow/intro-to-ml-with-kubeflow-examples/tree/master/data-extraction
+2. Create a IDE in DKube, select the code created in step 1.
+3. Go to python-notebook and follow the following steps to run MailingListDataPrep.ipynb
+   - Create the pv volumes if not already existing in your cluster.
+   - Create 2 pv volumes say (mailing-storage1 & simple1) with sizes "5Gi" and other with "100Mi".
+   - Add the parameter volume_name in dsl.VolumeOp in cell 20
+     ```
+     dvop = dsl.VolumeOp(
+        name="create_pvc",
+        resource_name="my-pvc-2",
+        size="5Gi",
+        modes=dsl.VOLUME_MODE_RWO,volume_name = 'mailing-storage1')
+     tldvop = dsl.VolumeOp(
+        name="create_pvc",
+        resource_name="tld-volume-2",
+        size="100Mi",
+        modes=dsl.VOLUME_MODE_RWO,volume_name = 'simple1')
+       ```
+4. Replace the client code with the below code :
+   ```
+   import os
+   existing_token = os.getenv("DKUBE_USER_ACCESS_TOKEN")
+   client = kfp.Client(existing_token=existing_token)
+
+5. Run all the cells of MailingListDataPrep.ipynb and it will create a Data-Prep pipeline in DKube.
+
 # Chapter-8 Model Inference
 
 Adding kubeflow sample models into Dkube
